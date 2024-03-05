@@ -7,9 +7,10 @@ Both my laptop and PC run on Ubuntu 22.04. I can't guarentee this script will wo
 
 ## Description
 `rsync` is used to sync the home directories.  
-`exclude.txt` includes all the directories and files to exclude from `rsync`.  
+`exclude.txt` includes all the directories and files to exclude from `rsync`. Manually edit to your content.  
 `apt.txt` includes all the packages explicitly installed via the apt package manager.  
 `snap.txt` includes all the snap packages installed.  
+`other.txt` includes all other commands to run to fill in gaps as needed. Manually edit to your content.  
 `pushHome.sh` is the script used to push changes to the remote server.  
 `pullHome.sh` is the script used to pull changes from the remote server.  
 

@@ -30,3 +30,16 @@ for package in $(cat apt.txt)
 do
     sudo apt-get install -y $package
 done
+
+## Run other commands
+file="other.txt"
+# Check if the file exists
+if [ ! -f "$file" ]; then
+    echo "Error: File $file not found."
+    exit 1
+fi
+
+# Iterate over each line in the file and execute it as a command
+while IFS= read -r line; do
+    eval "$line"
+done < "$file"
