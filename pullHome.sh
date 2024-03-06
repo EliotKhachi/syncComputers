@@ -30,6 +30,8 @@ for package in $(cat apt.txt)
 do
     sudo apt-get install -y $package
 done
+# Fix any broken / unmet dependencies
+sudo apt --fix-broken install -y
 
 ## Run other commands
 file="other.txt"
@@ -41,5 +43,10 @@ fi
 
 # Iterate over each line in the file and execute it as a command
 while IFS= read -r line; do
+    # Skip lines that start with a # or are empty
+    if [[ $line =~ ^[[:space:]]*# || -z $line ]]; then
+        continue
+    fi
+    # Execute the command
     eval "$line"
 done < "$file"
