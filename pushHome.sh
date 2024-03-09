@@ -16,6 +16,7 @@ repo="/home/$USER/Public/repos/syncComputers/"
 echo "Pushing home directory..."
 sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --log-file=$repo/push.log --partial-dir=partial \
     --exclude-from=exclude.txt \
+    --include-from=include.txt \
     /home/$USER/ $PI_USERNAME@$PI_ADDRESS:$DISK_MOUNT_PATH/home/$USER/
 
 ## Update git repository
