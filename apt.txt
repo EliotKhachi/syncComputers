@@ -16,6 +16,8 @@ avahi-daemon
 baobab
 base-passwd
 bc
+blueman
+bluetooth
 bluez
 bluez-alsa-utils
 bluez-cups
@@ -95,7 +97,6 @@ gawk
 gcc
 gcc-12
 gcc-arm-none-eabi
-gdm3
 gedit
 gh
 ghostscript-x
@@ -116,14 +117,9 @@ gnome-mahjongg
 gnome-menus
 gnome-mines
 gnome-power-manager
-gnome-remote-desktop
 gnome-screenshot
 gnome-session-canberra
 gnome-settings-daemon
-gnome-shell
-gnome-shell-extension-appindicator
-gnome-shell-extension-desktop-icons-ng
-gnome-shell-extension-ubuntu-dock
 gnome-shell-pomodoro
 gnome-sudoku
 gnome-system-monitor
@@ -146,7 +142,6 @@ gsettings-ubuntu-schemas
 gstreamer1.0-alsa
 gstreamer1.0-fdkaac
 gstreamer1.0-packagekit
-gstreamer1.0-pipewire
 gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-base-apps
 gstreamer1.0-pulseaudio
@@ -254,6 +249,7 @@ libreoffice-help-common
 libreoffice-help-en-us
 libreoffice-impress
 libreoffice-math
+libreoffice-ogltrans
 libreoffice-pdfimport
 libreoffice-style-breeze
 libreoffice-writer
@@ -313,6 +309,7 @@ network-manager-pptp-gnome
 nginx
 nmap
 nodejs
+npm
 ofono
 ofono-dev
 openjdk-11-jdk
@@ -321,6 +318,7 @@ openjdk-17-jre-headless
 openjdk-19-jdk
 openocd
 openprinting-ppds
+openrazer-meta
 openssh-client
 openssh-server
 openssl
@@ -331,13 +329,8 @@ pandoc
 pavucontrol
 pcmciautils
 pinta
-pipewire
-pipewire-audio-client-libraries
 pipewire-bin
 pipewire-doc
-pipewire-media-session
-pipewire-pulse
-pipewire-tests
 pkg-config
 plymouth-theme-spinner
 policykit-desktop-privileges
@@ -354,6 +347,7 @@ printer-driver-ptouch
 printer-driver-pxljr
 printer-driver-sag-gdi
 printer-driver-splix
+pulseaudio-module-bluetooth
 pulseview
 putty
 python-gi-dev
@@ -393,15 +387,13 @@ tldr
 tmux
 totem
 transmission-gtk
-ubuntu-desktop
-ubuntu-desktop-minimal
 ubuntu-docs
 ubuntu-drivers-common
+ubuntu-gnome-desktop
 ubuntu-minimal
 ubuntu-release-upgrader-gtk
 ubuntu-report
 ubuntu-restricted-addons
-ubuntu-session
 ubuntu-settings
 ubuntu-standard
 ubuntu-wallpapers
