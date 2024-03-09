@@ -4,11 +4,12 @@ DISK_DEVICE="/dev/sda"
 repo="/home/$USER/Public/repos/syncComputers/"
 
 # Get latest version of scripts (update snap.txt, exclude.txt, and apt.txt)
+echo "Pulling latest version of git repository..."
 git -C $repo pull origin main
 
 # Sync directories to backup server. Exclude directories that are not needed.
 echo "Syncing home directories..."
- sudo rsync -avxz -e "ssh -i /home/$USER/.ssh/rpi" --exclude-from=exclude.txt \
+ sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --exclude-from=exclude.txt \
     $PI_USERNAME@$PI_ADDRESS:$DISK_MOUNT_PATH/home/$USER/ /home/$USER/
 
 # Install snap packages
@@ -27,13 +28,13 @@ done
 
 ## Update Apt Packages
 echo "Updating apt packages..."
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get -qq update && sudo apt-get -qq upgrade
 
 ## Add Apt Packages
 echo "Installing apt packages..."
 for package in $(cat apt.txt)
 do
-    sudo apt-get install -y $package
+    sudo apt-get -qq install -y $package
 done
 
 ## Run any other commands
@@ -41,5 +42,4 @@ done
 
 # Fix any broken / unmet dependencies
 echo "Fixing broken / unmet dependencies..."
-sudo apt --fix-broken install -y
-
+sudo apt-get -qq --fix-broken install -y
