@@ -48,3 +48,4 @@ sudo apt-get -qq --fix-broken install -y
 
 git -C $repo add .
 git -C $repo commit -m "Pulled home dir from server to $HOSTNAME."
+git -C $repo push
