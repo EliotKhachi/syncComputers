@@ -35,9 +35,11 @@ for package in $(cat apt.txt)
 do
     sudo apt-get install -y $package
 done
+
+## Run any other commands
+./other.sh
+
 # Fix any broken / unmet dependencies
 echo "Fixing broken / unmet dependencies..."
 sudo apt --fix-broken install -y
 
-## Run any other commands
-./other.sh
