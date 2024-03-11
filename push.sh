@@ -21,4 +21,5 @@ sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --log-file=$repo/push.log --p
 
 ## Update git repository
 git -C $repo add .
-git -C $repo commit -m "Pushed backup from $HOSTNAME to server on $(date)"
+git -C $repo commit -m "Pushed home dir from $HOSTNAME to server"
+git -C $repo push

@@ -9,7 +9,9 @@ git -C $repo pull origin main
 
 # Sync directories to backup server. Exclude directories that are not needed.
 echo "Syncing home directories..."
- sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --exclude-from=exclude.txt \
+ sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --log-file=$repo/pull.log \
+     --exclude-from=exclude.txt \
+     --include-from=include.txt \
     $PI_USERNAME@$PI_ADDRESS:$DISK_MOUNT_PATH/home/$USER/ /home/$USER/
 
 # Install snap packages
@@ -43,3 +45,7 @@ done
 # Fix any broken / unmet dependencies
 echo "Fixing broken / unmet dependencies..."
 sudo apt-get -qq --fix-broken install -y
+
+git -C $repo add .
+git -C $repo commit -m "Pulled home dir from server to $HOSTNAME."
+git -C $repo push
