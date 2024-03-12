@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Get root permissions user
+echo "Enter root credentials:"
+sudo echo ""
 ## Update snap.txt and apt.txt
 echo "Updating snap.txt..."  
 snap list | awk 'NR>1 {print $1}' > snap.txt

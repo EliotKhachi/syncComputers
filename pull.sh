@@ -3,6 +3,9 @@ DISK_MOUNT_PATH="/mnt/backup"
 DISK_DEVICE="/dev/sda"
 repo="/home/$USER/Public/repos/syncComputers/"
 
+# Get root permissions user
+echo "Enter root credentials:"
+sudo echo ""
 # Get latest version of scripts (update snap.txt, exclude.txt, and apt.txt)
 echo "Pulling latest version of git repository..."
 git -C $repo pull origin main
@@ -40,7 +43,7 @@ do
 done
 
 ## Run any other commands
-./other.sh
+sudo ./other.sh
 
 # Fix any broken / unmet dependencies
 echo "Fixing broken / unmet dependencies..."
