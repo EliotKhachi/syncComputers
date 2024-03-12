@@ -34,6 +34,7 @@ nvim
 obsidian
 okular
 openjdk
+postman
 rpi-imager
 snap-store
 snapd
