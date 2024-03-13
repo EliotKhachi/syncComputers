@@ -8,7 +8,6 @@ snap
 .vscode
 .thunderbird
 .npm
-Public/repos
 *cache*/*
 *Cache*/*
 *CACHE*/*
