@@ -15,10 +15,10 @@ repo="/home/$USER/Public/repos/syncDirectories/"
 
 ## Push home directories to backup server. Exclude directories that are not needed.
 echo "Pushing home directory..."
-sudo rsync -avxzq --log-file=$repo/push.log --partial-dir=partial \
+rsync -avxzq --log-file=$repo/push.log --partial-dir=partial \
     --exclude-from=exclude.txt \
     --include-from=include.txt \
-    /home/$USER/ /mnt/nfs/home/
+    /home/$USER/* /mnt/nfs/home/
 
 ## Update git repository
 git -C $repo add .
