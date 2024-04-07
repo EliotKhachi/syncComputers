@@ -11,16 +11,14 @@ echo "Updating apt.txt..."
 aptitude search '~i!~M' -F '%p' > apt.txt
 sleep 1
 
-DISK_MOUNT_PATH="/mnt/backup"
-DISK_DEVICE="/dev/sda"
-repo="/home/$USER/Public/repos/syncComputers/"
+repo="/home/$USER/Public/repos/syncDirectories/"
 
 ## Push home directories to backup server. Exclude directories that are not needed.
 echo "Pushing home directory..."
 sudo rsync -avxzq -e "ssh -i /home/$USER/.ssh/rpi" --log-file=$repo/push.log --partial-dir=partial \
     --exclude-from=exclude.txt \
     --include-from=include.txt \
-    /home/$USER/ $PI_USERNAME@$PI_ADDRESS:$DISK_MOUNT_PATH/home/$USER/
+    /home/$USER/ /mnt/nfs/home
 
 ## Update git repository
 git -C $repo add .

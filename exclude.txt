@@ -17,3 +17,4 @@ snap
 Downloads
 Documents/PimsleurCompleteCollection
 .ssh
+Videos

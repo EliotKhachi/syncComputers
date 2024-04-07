@@ -1,5 +1,6 @@
 bare
 canonical-livepatch
+chromium
 code
 core
 core18
@@ -27,6 +28,7 @@ kf5-5-104-qt-5-15-8-core22
 kf5-5-108-qt-5-15-10-core22
 kf5-5-110-qt-5-15-11-core22
 kf5-5-111-qt-5-15-11-core22
+kf5-5-113-qt-5-15-11-core22
 krita
 lz4
 mysql-workbench-community
@@ -42,5 +44,6 @@ snapd-desktop-integration
 spotify
 utorrent
 video-downloader
+whatsapp-for-linux
 wine-platform-6-stable
 wine-platform-runtime
